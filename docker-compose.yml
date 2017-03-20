@@ -1,0 +1,37 @@
+version: '2'
+
+volumes:
+  postgres_data: {}
+  postgres_backup: {}
+
+services:
+
+  postgres:
+    build: ./compose/postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - postgres_backup:/backups
+
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/django/Dockerfile
+    user: django
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    expose:
+      - "8000"
+      - "5000"
+      - "6000"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    command: /gunicorn.sh
