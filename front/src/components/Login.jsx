@@ -49,13 +49,15 @@ class Login extends Component {
   renderForm() {
     return (
       <form className="ui form" onSubmit={this.onFormSubmit}>
+        <h1 className="ui header">Login</h1>
+
         <div className="field">
           <label>Email</label>
-          <input type="text" name="first-name" placeholder="First Name" value={this.state.email} onChange={this.handleMailChange}/>
+          <input type="text" name="first-name" placeholder="Your Username" value={this.state.email} onChange={this.handleMailChange}/>
         </div>
         <div className="field">
           <label>Password</label>
-          <input type="text" name="last-name" placeholder="Last Name" value={this.state.password} onChange={this.handlePasswordChange}/>
+          <input type="text" name="last-name" placeholder="*******" value={this.state.password} onChange={this.handlePasswordChange}/>
         </div>
         <button className="ui button" type="submit">Submit</button>
         {
