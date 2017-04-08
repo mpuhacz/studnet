@@ -1,27 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { createStore, combineReducers, applyMiddleware, browserHistory } from 'redux'
 import { apiMiddleware } from 'redux-api-middleware'
 import { Provider } from 'react-redux'
 import { Router, Route } from 'react-router'
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import { syncHistoryWithStore, routerReducer, routerMiddleware } from 'react-router-redux'
 import { createBrowserHistory } from 'history';
 
 import Login from './containers/Login';
 
 import reducers from './reducers'
 
-const reuducer =  combineReducers({
-    ...reducers,
-    routing: routerReducer,
-  })
 
 const store = createStore(
   combineReducers({
-    ...reducers,
+    reducers,
     routing: routerReducer,
   }),
   applyMiddleware(apiMiddleware),
+  applyMiddleware(routerMiddleware(browserHistory))
 );
 
 const history = syncHistoryWithStore(createBrowserHistory(), store)
