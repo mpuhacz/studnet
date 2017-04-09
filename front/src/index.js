@@ -1,32 +1,36 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, combineReducers, applyMiddleware, browserHistory } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { apiMiddleware } from 'redux-api-middleware'
 import { Provider } from 'react-redux'
-import { Router, Route } from 'react-router'
-import { syncHistoryWithStore, routerReducer, routerMiddleware } from 'react-router-redux'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 import { createBrowserHistory } from 'history';
 
 import Login from './containers/Login';
+import Register from './containers/Register';
+import Intro from './components/Intro';
 
 import reducers from './reducers'
-
 
 const store = createStore(
   combineReducers({
     reducers,
-    routing: routerReducer,
   }),
   applyMiddleware(apiMiddleware),
-  applyMiddleware(routerMiddleware(browserHistory))
 );
-
-const history = syncHistoryWithStore(createBrowserHistory(), store)
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history}>
-      <Route path="/login" component={Login} />
+    <Router>
+      <div>
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+        <Route path="/intro" componen={Intro} />
+      </div>
     </Router>
   </Provider>,
   document.getElementById('root')
