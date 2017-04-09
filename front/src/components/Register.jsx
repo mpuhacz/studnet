@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
   constructor(props) {
@@ -8,6 +8,8 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
+      username: '',
+      confirmPassword: '',
     };
   }
 
@@ -23,20 +25,33 @@ class Login extends Component {
     });
   }
 
+  handleConfirmPasswordChange = (e) => {
+    this.setState({
+      confirmPassword: e.target.value,
+    });
+  }
+
+  handleUsernameChange = (e) => {
+    this.setState({
+      username: e.target.value,
+    });
+  }
+
   onFormSubmit = (e) => {
     e.preventDefault();
-    this.props.loginUser(this.state.email, this.state.password);
+
+    this.props.registerUser(
+      this.state.username,
+      this.state.email,
+      this.state.password,
+      this.state.confirmPassword,
+    );
   }
 
   componentWillReceiveProps() {
     if (this.props.location.pathname === '/login' && this.props.isLoggedIn) {
       this.props.goToDashboard();
     }
-  }
-
-  goToRegister = (e) => {
-    e.preventDefault();
-    this.props.goToRegister();
   }
 
   renderLoadingIndicator() {
@@ -47,7 +62,7 @@ class Login extends Component {
           <div className="header">
             Just one second
           </div>
-          <p>Logging in</p>
+          <p>Registering</p>
         </div>
       </div>
     );
@@ -56,24 +71,31 @@ class Login extends Component {
   renderForm() {
     return (
       <form className="ui form" onSubmit={this.onFormSubmit}>
-        <h1 className="ui header">Login</h1>
-
+        <h1 className="ui header">Register</h1>
+        <div className="field">
+          <label>Username</label>
+          <input type="text" name="first-name" placeholder="Your Username" value={this.state.username} onChange={this.handleUsernameChange}/>
+        </div>
         <div className="field">
           <label>Email</label>
-          <input type="text" name="first-name" placeholder="Your Username" value={this.state.email} onChange={this.handleMailChange}/>
+          <input type="text" name="first-name" placeholder="Your Email" value={this.state.email} onChange={this.handleMailChange}/>
         </div>
         <div className="field">
           <label>Password</label>
           <input type="text" name="last-name" placeholder="*******" value={this.state.password} onChange={this.handlePasswordChange}/>
         </div>
+        <div className="field">
+          <label>Confirm Password</label>
+          <input type="text" name="last-name" placeholder="*******" value={this.state.confirmPassword} onChange={this.handleConfirmPasswordChange}/>
+        </div>
         <button className="ui button" type="submit">Submit</button>
-        <Link to={'/register'}>
-          <button className="ui button">Dont' have account? Register</button>
+        <Link to={'/login'}>
+          <button className="ui button">Already have account? Login</button>
         </Link>
         {
-          this.props.loginError &&
+          this.props.registerError &&
           <div className="ui message">
-            <p>{JSON.stringify(this.props.loginError)}</p>
+            <p>{JSON.stringify(this.props.registerError)}</p>
           </div>
         }
       </form>
@@ -81,13 +103,6 @@ class Login extends Component {
   }
 
   render() {
-    if (this.props.isLoggedIn) {
-      return (<Redirect to={{
-        pathname: '/dashboard',
-        state: { from: this.props.location }
-      }}/>);
-    }
-
     if (this.props.isLoggingIn) {
       return this.renderLoadingIndicator();
     } else {

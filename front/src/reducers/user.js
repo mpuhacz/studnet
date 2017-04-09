@@ -8,7 +8,7 @@ const defaultState = {
   apiToken: '',
   isLoggingIn: false,
   isLoggedIn: false,
-  error: {},
+  error: null,
 };
 
 export default function (state = defaultState, action) {
@@ -26,7 +26,7 @@ export default function (state = defaultState, action) {
         isLoggedIn: true,
         isLoggingIn: false,
         apiToken: action.payload.key,
-        error: {},
+        error: null,
       });
     case LOGIN_FAILED:
       return Object.assign({}, state, {
