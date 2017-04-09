@@ -4,4 +4,6 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY ./front /usr/src/app
 
+CMD npm install
+
 CMD npm start
