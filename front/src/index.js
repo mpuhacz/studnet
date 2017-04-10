@@ -16,6 +16,9 @@ import Intro from './components/Intro';
 
 import reducers from './reducers'
 
+/*
+  Redux store creation
+*/
 const store = createStore(
   combineReducers({
     reducers,
@@ -23,6 +26,11 @@ const store = createStore(
   applyMiddleware(apiMiddleware),
 );
 
+/*
+  Main router class.
+
+  Add any new routes here. You can nest Routes inside Routes.
+*/
 ReactDOM.render(
   <Provider store={store}>
     <Router>
