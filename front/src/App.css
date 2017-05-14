@@ -1,21 +1,15 @@
-.App {
-  text-align: center;
+.ui.menu .item img.logo {
+  margin-right: 1.5em;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.main.container {
+  margin-top: 4em;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.wireframe {
+  margin-top: 2em;
 }
-
-.App-intro {
-  font-size: large;
+.ui.footer.segment {
+  margin: 5em 0em 0em;
+  padding: 5em 0em;
 }
 
 .xs-margin {

@@ -6,9 +6,7 @@ import { Provider } from 'react-redux'
 import {
   BrowserRouter as Router,
   Route,
-  Link
 } from 'react-router-dom'
-import { createBrowserHistory } from 'history';
 
 import Login from './containers/Login';
 import Register from './containers/Register';
