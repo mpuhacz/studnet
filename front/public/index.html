@@ -5,9 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css">
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
     <title>React App</title>
   </head>
   <body>
     <div id="root" class="ui container"></div>
+    <script>
+      var content = [
+      { title: 'Andorra' },
+      { title: 'United Arab Emirates' },
+      { title: 'Afghanistan' },
+      { title: 'Antigua' },
+      { title: 'Anguilla' },
+      { title: 'Albania' },
+      { title: 'Armenia' },
+      { title: 'Netherlands Antilles' },
+      { title: 'Angola' },
+      { title: 'Argentina' },
+      { title: 'American Samoa' },
+      { title: 'Austria' },
+      { title: 'Australia' },
+      { title: 'Aruba' },
+      { title: 'Aland Islands' },
+      { title: 'Azerbaijan' },
+      { title: 'Bosnia' },
+      { title: 'Barbados' },
+      { title: 'Bangladesh' },
+      { title: 'Belgium' },
+      { title: 'Burkina Faso' },
+      { title: 'Bulgaria' },
+      { title: 'Bahrain' },
+      { title: 'Burundi' }
+    ];
+
+    console.log('xD');
+
+    $('.search').search({
+      source: content
+    });
+    </script>
   </body>
 </html>

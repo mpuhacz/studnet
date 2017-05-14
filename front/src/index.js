@@ -12,7 +12,8 @@ import { createBrowserHistory } from 'history';
 
 import Login from './containers/Login';
 import Register from './containers/Register';
-import Intro from './components/Intro';
+import Onboarding from './components/Onboarding';
+import App from './App.css';
 
 import reducers from './reducers'
 
@@ -37,7 +38,7 @@ ReactDOM.render(
       <div>
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
-        <Route path="/intro" componen={Intro} />
+        <Route path="/onboarding" component={Onboarding} />
       </div>
     </Router>
   </Provider>,
