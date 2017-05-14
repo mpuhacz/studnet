@@ -60,7 +60,7 @@ const renderSuggestion = suggestion => (
   <span>{suggestion.name}</span>
 );
 
-class Intro extends Component {
+class Onboarding extends Component {
   constructor() {
     super();
     this.state = {
@@ -69,6 +69,12 @@ class Intro extends Component {
       course: '',
       suggestions: []
     };
+  }
+
+  componentWillReceiveProps() {
+    if (this.props.location.pathname === '/onboarding' && this.props.preferencesSet) {
+      this.props.goToStream();
+    }
   }
 
   onTownChange = (event, { newValue }) => {
@@ -113,6 +119,11 @@ class Intro extends Component {
     });
   };
 
+  onFormSubmit = (e) => {
+    e.preventDefault();
+    this.props.goToStream(this.state.town, this.state.university, this.state.course);
+  }
+
   render() {
     const { town, course, university, suggestions } = this.state;
 
@@ -135,11 +146,11 @@ class Intro extends Component {
     };
 
     return (
-      <div className="ui center aligned container">
+      <div className="ui center aligned container xs-margin">
        <div className="ui segment">
           <h1 className="ui header">Witaj w aplikacji StudNET</h1>
           <h5 className="ui header">Aby ułatwic Tobie korzystanie z aplikacji i spersonalizowac tresci, podaj prosze pare informacji o sobie</h5>
-          <form className="ui form">
+          <form className="ui form" onSubmit={this.onFormSubmit}>
             <Autosuggest
               suggestions={suggestions}
               onSuggestionsFetchRequested={this.onTownSuggestionsFetchRequested}
@@ -164,7 +175,7 @@ class Intro extends Component {
               renderSuggestion={renderSuggestion}
               inputProps={courseInputProps}
             />
-            <button className="ui button">
+            <button className="ui button xs-margin" type="submit">
               Gotowe!
             </button>
           </form>
@@ -174,4 +185,4 @@ class Intro extends Component {
   }
 }
 
-export default Intro;
+export default Onboarding;

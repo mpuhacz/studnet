@@ -12,7 +12,8 @@ import { createBrowserHistory } from 'history';
 
 import Login from './containers/Login';
 import Register from './containers/Register';
-import Onboarding from './components/Onboarding';
+import Onboarding from './containers/Onboarding';
+import Stream from './components/Stream';
 import App from './App.css';
 
 import reducers from './reducers'
@@ -39,6 +40,7 @@ ReactDOM.render(
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/onboarding" component={Onboarding} />
+        <Route path="/stream" component={Stream} />
       </div>
     </Router>
   </Provider>,
