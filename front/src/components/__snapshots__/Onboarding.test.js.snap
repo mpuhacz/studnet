@@ -1,0 +1,130 @@
+exports[`<Onboarding /> fetches course suggestions correctly 1`] = `
+Object {
+  "course": "",
+  "suggestions": Array [
+    Object {
+      "name": "Informatyka",
+    },
+  ],
+  "town": "",
+  "university": "",
+}
+`;
+
+exports[`<Onboarding /> fetches town suggestions correctly 1`] = `
+Object {
+  "course": "",
+  "suggestions": Array [
+    Object {
+      "name": "Poznan",
+    },
+  ],
+  "town": "",
+  "university": "",
+}
+`;
+
+exports[`<Onboarding /> fetches university suggestions correctly 1`] = `
+Object {
+  "course": "",
+  "suggestions": Array [
+    Object {
+      "name": "Politechnika",
+    },
+  ],
+  "town": "",
+  "university": "",
+}
+`;
+
+exports[`<Onboarding /> renders Onboarding form with correct specification 1`] = `
+<div
+  className="ui center aligned container xs-margin">
+  <div
+    className="ui segment">
+    <h1
+      className="ui header">
+      Witaj w aplikacji StudNET
+    </h1>
+    <h5
+      className="ui header">
+      Aby ułatwic Tobie korzystanie z aplikacji i spersonalizowac tresci, podaj prosze pare informacji o sobie
+    </h5>
+    <form
+      className="ui form"
+      onSubmit={[Function]}>
+      <div
+        className="react-autosuggest__container">
+        <input
+          aria-activedescendant={null}
+          aria-autocomplete="list"
+          aria-expanded={false}
+          aria-haspopup={false}
+          aria-owns="react-autowhatever-1"
+          autoComplete="off"
+          className="react-autosuggest__input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Wprowadz miasto"
+          role="combobox"
+          type="text"
+          value="" />
+        <div
+          className="react-autosuggest__suggestions-container"
+          id="react-autowhatever-1" />
+      </div>
+      <div
+        className="react-autosuggest__container">
+        <input
+          aria-activedescendant={null}
+          aria-autocomplete="list"
+          aria-expanded={false}
+          aria-haspopup={false}
+          aria-owns="react-autowhatever-1"
+          autoComplete="off"
+          className="react-autosuggest__input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Wprowadz nazwę uczelni"
+          role="combobox"
+          type="text"
+          value="" />
+        <div
+          className="react-autosuggest__suggestions-container"
+          id="react-autowhatever-1" />
+      </div>
+      <div
+        className="react-autosuggest__container">
+        <input
+          aria-activedescendant={null}
+          aria-autocomplete="list"
+          aria-expanded={false}
+          aria-haspopup={false}
+          aria-owns="react-autowhatever-1"
+          autoComplete="off"
+          className="react-autosuggest__input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Wprowadz kierunek"
+          role="combobox"
+          type="text"
+          value="" />
+        <div
+          className="react-autosuggest__suggestions-container"
+          id="react-autowhatever-1" />
+      </div>
+      <button
+        className="ui button xs-margin"
+        type="submit">
+        Gotowe!
+      </button>
+    </form>
+  </div>
+</div>
+`;

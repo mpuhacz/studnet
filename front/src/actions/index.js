@@ -16,6 +16,10 @@ export const REGISTER_CALL = 'REGISTER_CALL';
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const REGISTER_FAILED = 'REGISTER_FAILED';
 
+export const SET_PREFERENCES = 'SET_PREFERENCES';
+export const SET_PREFERENCES_SUCCESS = 'SET_PREFERENCES_SUCCESS';
+export const SET_PREFERENCES_FAILED = 'SET_PREFERENCES_FAILED';
+
 export const loginAPI = (username, password) => ({
   [CALL_API]: {
     endpoint: LOGIN_URL,
