@@ -2,6 +2,10 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAILED,
   LOGIN_CALL,
+
+  SET_PREFERENCES,
+  SET_PREFERENCES_FAIL,
+  SET_PREFERENCES_SUCCESS,
 } from '../actions';
 
 const defaultState = {
@@ -9,6 +13,8 @@ const defaultState = {
   isLoggingIn: false,
   isLoggedIn: false,
   error: null,
+  preferencesSet: false,
+  isSettingPreferences: false,
 };
 
 export default function (state = defaultState, action) {
@@ -34,6 +40,10 @@ export default function (state = defaultState, action) {
         isLoggingIn: false,
         error: action.payload,
       });
+      // TODO: Add reducing these actions
+    case SET_PREFERENCES:
+    case SET_PREFERENCES_FAIL:
+    case SET_PREFERENCES_SUCCESS:
     default:
       return state;
   }

@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => { console.log(state); return {
 const mapDispatchToProps = (dispatch, ownProps) => ({
   registerUser: (username, email, password, confirmPassword) =>
     dispatch(registerAPI(username, email, password, confirmPassword)),
-  goToDashboard: () => dispatch(push('/dashboard')),
+  goToDashboard: () => dispatch(push('/intro')),
   goToLogin: () => dispatch(push('/login')),
 });
 
