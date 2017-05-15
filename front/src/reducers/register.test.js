@@ -11,12 +11,12 @@ const defaultState = {
   error: null,
 };
 
-describe('Companies reducer', () => {
+describe('Register reducer', () => {
   it('returns proper initial state', () => {
     expect(register(undefined, {})).toEqual(defaultState);
   });
 
-  it('gets new company data', () => {
+  it('sets state properly on REGISTER_FAILED action', () => {
     expect(register(undefined, {
       type: REGISTER_FAILED,
       payload: { a: 1 },
@@ -29,7 +29,7 @@ describe('Companies reducer', () => {
     });
   });
 
-  it('returns same state for unknown action', () => {
+  it('ets state properly on REGISTER_SUCCESS action', () => {
     expect(register(defaultState,
       { type: REGISTER_SUCCESS },
     )).toEqual({

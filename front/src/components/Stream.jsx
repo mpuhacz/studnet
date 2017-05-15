@@ -3,13 +3,14 @@ import NewFriend from './Cards/NewFriend';
 import NewPhotos from './Cards/NewPhotos';
 import NewPost from './Cards/NewPost';
 import Navbar from './Navbar';
+import PostCreator from './PostCreator';
 
 class Stream extends Component {
   render() {
     return (
-      <div>
+      <div className="site">
         <Navbar />
-        <div className="ui main text container">
+        <div className="ui main text container site-content">
           <div className="ui feed">
             <NewFriend
               name="Jacek Placek"
@@ -56,6 +57,7 @@ class Stream extends Component {
             />
           </div>
         </div>
+         <PostCreator />
       </div>
     );
   }

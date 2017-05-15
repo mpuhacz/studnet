@@ -18,8 +18,6 @@ const defaultState = {
 };
 
 export default function (state = defaultState, action) {
-  console.log(action);
-
   switch(action.type) {
     case LOGIN_CALL:
       return Object.assign({}, state, {

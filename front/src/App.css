@@ -16,10 +16,24 @@
   margin: 10px !important;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
+
+.site-content {
+  flex: 1;
+}
+
+.footer {
+  position: absolute !important;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Autosuggest styling */
 
 .react-autosuggest__container {
   position: relative;
