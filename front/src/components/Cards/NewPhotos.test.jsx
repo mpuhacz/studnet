@@ -17,4 +17,17 @@ describe('<NewPhotos />', () => {
       ]}
     />, div);
   });
+
+  it('renders NewPhotos form with correct specification', () => {
+    const wrapper = renderer.create(<NewPhotos
+      avatar="https://semantic-ui.com/images/avatar/small/justen.jpg"
+      name="Name"
+      likes={1}
+      photos={[
+        'http://www.readersdigest.ca/wp-content/uploads/2011/01/4-ways-cheer-up-depressed-cat.jpg',
+        'http://www.elonka.com/kryptos/sanborn/KGBEnglish.jpg',
+      ]}
+    />);
+    expect(wrapper.toJSON()).toMatchSnapshot();
+  });
 });

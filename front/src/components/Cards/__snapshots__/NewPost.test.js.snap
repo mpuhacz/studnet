@@ -1,0 +1,40 @@
+exports[`<NewPost /> renders NewPost form with correct specification 1`] = `
+<div
+  className="event">
+  <div
+    className="label">
+    <img
+      alt="avatar"
+      src="https://semantic-ui.com/images/avatar/small/justen.jpg" />
+  </div>
+  <div
+    className="content">
+    <div
+      className="summary">
+      <a>
+        Name
+      </a>
+       zapostował
+      <div
+        className="date">
+        3 dni temu
+      </div>
+    </div>
+    <div
+      className="extra text">
+      123
+    </div>
+    <div
+      className="meta">
+      <a
+        className="like">
+        <i
+          className="like icon" />
+         
+        1
+         Likes
+      </a>
+    </div>
+  </div>
+</div>
+`;

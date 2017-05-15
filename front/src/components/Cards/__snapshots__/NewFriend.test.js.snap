@@ -1,0 +1,37 @@
+exports[`<NewFriend /> renders NewFriend form with correct specification 1`] = `
+<div
+  className="event">
+  <div
+    className="label">
+    <img
+      alt="avatar"
+      src="https://semantic-ui.com/images/avatar/small/justen.jpg" />
+  </div>
+  <div
+    className="content">
+    <div
+      className="summary">
+      <a
+        className="user">
+        Name
+      </a>
+       dodał Cie jako znajomego
+      <div
+        className="date">
+        1 godzinę temu
+      </div>
+    </div>
+    <div
+      className="meta">
+      <a
+        className="like">
+        <i
+          className="like icon" />
+         
+        1
+         Likes
+      </a>
+    </div>
+  </div>
+</div>
+`;

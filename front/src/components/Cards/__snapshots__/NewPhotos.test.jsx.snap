@@ -1,0 +1,57 @@
+exports[`<NewPhotos /> renders NewPhotos form with correct specification 1`] = `
+<div
+  className="event">
+  <div
+    className="label">
+    <img
+      alt="avatar"
+      src="https://semantic-ui.com/images/avatar/small/justen.jpg" />
+  </div>
+  <div
+    className="content">
+    <div
+      className="summary">
+      <a>
+        Name
+      </a>
+       dodał 
+      <a>
+        2
+         nowe zdjęcia
+      </a>
+      <div
+        className="date">
+        4 dni temu
+      </div>
+    </div>
+    <div
+      className="extra images">
+      <a
+        href="http://www.readersdigest.ca/wp-content/uploads/2011/01/4-ways-cheer-up-depressed-cat.jpg"
+        target="_blank">
+        <img
+          alt="Illustration"
+          src="http://www.readersdigest.ca/wp-content/uploads/2011/01/4-ways-cheer-up-depressed-cat.jpg" />
+      </a>
+      <a
+        href="http://www.elonka.com/kryptos/sanborn/KGBEnglish.jpg"
+        target="_blank">
+        <img
+          alt="Illustration"
+          src="http://www.elonka.com/kryptos/sanborn/KGBEnglish.jpg" />
+      </a>
+    </div>
+    <div
+      className="meta">
+      <a
+        className="like">
+        <i
+          className="like icon" />
+         
+        1
+         Like
+      </a>
+    </div>
+  </div>
+</div>
+`;
