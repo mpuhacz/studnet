@@ -23,6 +23,17 @@ cd front && npm start
 ```
 
 
+### Testing
+```
+npm install -g create-react-app
+npm test
+```
+
+Coverage:
+```
+npm test -- --coverage
+```
+
 ### Ports:
 Django: 8000
 Front: 3000
