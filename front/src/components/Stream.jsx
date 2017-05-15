@@ -45,6 +45,15 @@ class Stream extends Component {
                 'http://www.elonka.com/kryptos/sanborn/KGBEnglish.jpg'
               ]}
             />
+            <NewPhotos
+              name="Jacek Placek"
+              likes={-1}
+              avatar={"https://semantic-ui.com/images/avatar/small/justen.jpg"}
+              photos={[
+                'http://www.elonka.com/kryptos/sanborn/KGBEnglish.jpg',
+                'http://www.elonka.com/kryptos/sanborn/KGBEnglish.jpg'
+              ]}
+            />
           </div>
         </div>
       </div>
